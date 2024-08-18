@@ -1,59 +1,64 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export const largeFieldState = atom({
-	key: 'largeFieldState',
-	default: []
+  key: "largeFieldState",
+  default: [],
 });
 
 export const middleFieldState = atom({
-	key: 'middleFieldState',
-	default: []
+  key: "middleFieldState",
+  default: [],
 });
 
 export const smallFieldState = atom({
-	key: 'smallFieldState',
-	default: []
+  key: "smallFieldState",
+  default: [],
 });
 
 export const detailFieldState = atom({
-	key: 'detailFieldState',
-	default: []
+  key: "detailFieldState",
+  default: [],
 });
 
 export const selectedFieldState = atom({
-	key: 'selectedFieldState',
-	default: {}
+  key: "selectedFieldState",
+  default: {},
 });
 
 export const showFieldInputState = atom({
-	key: 'showFieldInputState',
-	default: true
+  key: "showFieldInputState",
+  default: true,
 });
 
 export const competencyListInSubjectState = atom({
-	key: 'competencyListInSubjectState',
-	default: {}
+  key: "competencyListInSubjectState",
+  default: {},
 });
 
 export const courseByCompetencyInSubjectState = atom({
-	key: 'courseByCompetencyInSubjectState',
-	default: {}
+  key: "courseByCompetencyInSubjectState",
+  default: {},
 });
 
 export const courseDetailState = atom({
-	key: 'courseDetailState',
-	default: []
+  key: "courseDetailState",
+  default: [],
 });
 
 export const subjectsInFieldState = atom({
-	key: 'subjectsInFieldState',
-	default: []
+  key: "subjectsInFieldState",
+  default: [],
+});
+
+export const totalRoadMapState = atom({
+  key: "totalRoadMapState",
+  default: [],
 });
 
 export const selectedSubjectState = atom({
-	key: 'selectedSubjectState',
-	default: {
-		subjectName: '전체',
-		subjectCode: -1
-	}
+  key: "selectedSubjectState",
+  default: {
+    subjectName: "전체",
+    subjectCode: -1,
+  },
 });
