@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
@@ -79,7 +79,7 @@ const RightButton = styled.div`
 	}
 `;
 
-const Cell = ({ cellData, onClick, highlightedCompetency }) => {
+const Cell = forwardRef(({ cellData, onClick, highlightedCompetency }, ref) => {
 	const [isHighlighted, setIsHighlighted] = useState(false);
 	useEffect(() => {
 		if (highlightedCompetency === cellData.competencyCode) {
@@ -90,7 +90,7 @@ const Cell = ({ cellData, onClick, highlightedCompetency }) => {
 	}, [cellData, highlightedCompetency]);
 
 	return (
-		<StyledCell>
+		<StyledCell ref={ref}>
 			<ButtonWrapper>
 				<LeftButton className={isHighlighted ? 'isHighlighted' : ''} onClick={() => {}}>
 					{cellData.competencyName}
@@ -101,6 +101,6 @@ const Cell = ({ cellData, onClick, highlightedCompetency }) => {
 			</ButtonWrapper>
 		</StyledCell>
 	);
-};
+});
 
 export default Cell;

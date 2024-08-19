@@ -98,8 +98,10 @@ const RoadMapContainer = () => {
 				});
 				competency.courseGetResponseList.forEach((course) => {
 					const { openingYear, openingSemester, haksuId, name } = course;
-					const semesterIndex = openingSemester === '1학기' ? 0 : 1;
-					const index = (openingYear - 1) * 2 + semesterIndex;
+					const semesterIndex = openingSemester === '2학기' ? 1 : 0;
+					const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+					const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+					
 					if (!haksuIdToCompetencyMap.has(haksuId)) {
 						haksuIdToCompetencyMap.set(haksuId, []);
 					}
@@ -115,8 +117,8 @@ const RoadMapContainer = () => {
 						}
 					];
 					if (openingSemester === '1,2학기') {
-						updatedRoadMapTableData[index - 1] = [
-							...updatedRoadMapTableData[index - 1],
+						updatedRoadMapTableData[index + 1] = [
+							...updatedRoadMapTableData[index + 1],
 							{
 								haksuId: haksuId,
 								courseName: name,
@@ -162,9 +164,10 @@ const RoadMapContainer = () => {
 			const updatedRoadMapTableData = JSON.parse(JSON.stringify(defaultTable));
 			totalRoadMap.forEach((course) => {
 				const { openingYear, openingSemester, haksuId, name } = course;
-				const semesterIndex = openingSemester === '1학기' ? 0 : 1;
-				const index = (openingYear - 1) * 2 + semesterIndex;
-
+				const semesterIndex = openingSemester === '2학기' ? 1 : 0;
+				const openingYear_include9 = (openingYear > 4) ? 4 : openingYear;
+				const index = (openingYear_include9 - 1) * 2 + semesterIndex;
+				
 				updatedRoadMapTableData[index] = [
 					...updatedRoadMapTableData[index],
 					{
@@ -175,8 +178,8 @@ const RoadMapContainer = () => {
 					}
 				];
 				if (openingSemester === '1,2학기') {
-					updatedRoadMapTableData[index - 1] = [
-						...updatedRoadMapTableData[index - 1],
+					updatedRoadMapTableData[index + 1] = [
+						...updatedRoadMapTableData[index + 1],
 						{
 							haksuId: haksuId,
 							courseName: name,
