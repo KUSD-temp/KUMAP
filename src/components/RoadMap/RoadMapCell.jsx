@@ -2,7 +2,7 @@ import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import { immergeBounce, dismissBounce } from '../../Animation/Animation';
-import CourseDetail from '../CourseDetail/CousreDetail';
+import CourseDetail from '../CourseDetail/CourseDetail';
 
 const StyledCell = styled.div`
 	min-height: 2rem;
